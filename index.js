@@ -3,8 +3,10 @@
 'use strict';
 
 hexo.config.markdown = Object.assign({
+  preset: 'default',
   render: {},
-  plugins: {}
+  plugins: [],
+  anchors: {}
 }, hexo.config.markdown);
 
 hexo.config.markdown.render = Object.assign({
@@ -17,8 +19,21 @@ hexo.config.markdown.render = Object.assign({
   tab: ''
 }, hexo.config.markdown.render);
 
+hexo.config.markdown.anchors = Object.assign({
+  level: 2,
+  collisionSuffix: '',
+  permalink: false,
+  permalinkClass: 'header-anchor',
+  permalinkSide: 'left',
+  permalinkSymbol: '\u00b6',
+  case: 0,
+  separator: '-'
+}, hexo.config.markdown.anchors);
 
-const renderer = require('./lib/renderer');
+const Renderer = require('./lib/renderer');
+const renderer = new Renderer(hexo);
+
+renderer.disableNunjucks = Boolean(hexo.config.markdown.disableNunjucks);
 
 hexo.extend.renderer.register('md', 'html', renderer, true);
 hexo.extend.renderer.register('markdown', 'html', renderer, true);
@@ -64,13 +79,13 @@ if (hexo.config.minify) {
         compress: {},
         exclude: ['*.min.js']
     }, hexo.config.minify.js, {
-            fromString: true
+        fromString: true
     });
 
 
     var filter = require('./lib/filter');
 
-	hexo.extend.filter.register('after_render:html', filter.logic_html);
+    hexo.extend.filter.register('after_render:html', filter.logic_html);
     hexo.extend.filter.register('after_render:css', filter.logic_css);
     hexo.extend.filter.register('after_render:js', filter.logic_js);
 
