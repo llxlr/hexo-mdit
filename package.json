@@ -32,7 +32,7 @@
     "hexo-util": "^3.0.1",
     "markdown-it": "^14.1.1",
     "markdown-it-abbr": "^1.0.4",
-    "markdown-it-attrs": "^3.0.2",
+    "markdown-it-attrs": "^5.0.0",
     "markdown-it-bracketed-spans": "^1.0.1",
     "markdown-it-charts": "^1.0.5",
     "markdown-it-container": "^2.0.0",
