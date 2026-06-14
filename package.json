@@ -28,7 +28,7 @@
     "deasync-promise": "^1.0.1",
     "frappe-charts": "^1.5.0",
     "html-minifier": "^2.1.2",
-    "katex": "^0.12.0",
+    "katex": "^0.17.0",
     "hexo-util": "^3.0.1",
     "markdown-it": "^14.1.1",
     "markdown-it-abbr": "^1.0.4",
