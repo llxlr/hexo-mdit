@@ -50,10 +50,10 @@
     "minimatch": "^3.0.0",
     "pangu": "^7.2.1",
     "prismjs": "^1.30.0",
-    "puppeteer": "^5.0.0",
+    "playwright": "^1.62.1",
     "uglify-js": "^3.19.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }
